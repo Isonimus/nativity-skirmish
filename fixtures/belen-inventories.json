@@ -1,0 +1,69 @@
+{
+  "note": "Household nativity sets described only by observable attribute (rules/conversion-table.md §2). 'expect' is the class the decision procedure must produce. Attributes are what a player would see; nothing here encodes who a figure depicts.",
+  "sets": [
+    {
+      "name": "Supermarket set, 12 pieces",
+      "figures": [
+        { "label": "swaddled infant in the manger", "attributes": ["swaddled"], "expect": "The Infant" },
+        { "label": "kneeling woman beside the manger", "attributes": ["kneeling"], "expect": "Supplicant" },
+        { "label": "standing man with a long staff", "attributes": ["staff"], "expect": "Drover" },
+        { "label": "ox, lying down", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" },
+        { "label": "donkey", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" },
+        { "label": "winged figure on the stable roof", "attributes": ["winged"], "expect": "Herald" },
+        { "label": "kneeling figure offering a casket", "attributes": ["kneeling", "burden"], "expect": "Bearer" },
+        { "label": "standing figure holding a censer", "attributes": ["burden"], "expect": "Bearer" },
+        { "label": "standing figure holding a jar", "attributes": ["burden"], "expect": "Bearer" },
+        { "label": "kneeling figure with a crook", "attributes": ["staff", "kneeling"], "expect": "Drover" },
+        { "label": "sheep", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "sheep", "attributes": ["quadruped"], "expect": "Herd Animal" }
+      ]
+    },
+    {
+      "name": "Accumulated family belen, four generations",
+      "figures": [
+        { "label": "swaddled infant", "attributes": ["swaddled"], "expect": "The Infant" },
+        { "label": "kneeling woman", "attributes": ["kneeling"], "expect": "Supplicant" },
+        { "label": "man with staff", "attributes": ["staff"], "expect": "Drover" },
+        { "label": "ox", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" },
+        { "label": "donkey", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" },
+        { "label": "riderless camel", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" },
+        { "label": "figure astride a camel, carrying a casket", "attributes": ["mounted", "burden"], "expect": "Rider" },
+        { "label": "helmeted figure astride a horse, with a spear", "attributes": ["mounted", "armed"], "expect": "Rider" },
+        { "label": "helmeted figure with spear and shield", "attributes": ["armed"], "expect": "Soldier" },
+        { "label": "helmeted figure with a short sword", "attributes": ["armed"], "expect": "Soldier" },
+        { "label": "man with an axe over his shoulder", "attributes": ["armed"], "expect": "Soldier" },
+        { "label": "winged figure, suspended", "attributes": ["winged"], "expect": "Herald" },
+        { "label": "small winged figure", "attributes": ["winged"], "expect": "Herald" },
+        { "label": "shepherd with crook and a lamb across his shoulders", "attributes": ["staff", "burden"], "expect": "Drover" },
+        { "label": "kneeling shepherd cradling a lamb", "attributes": ["kneeling", "burden"], "expect": "Bearer" },
+        { "label": "kneeling figure, hands empty, head bowed", "attributes": ["kneeling"], "expect": "Supplicant" },
+        { "label": "woman kneeling at a washing trough", "attributes": ["kneeling"], "expect": "Supplicant" },
+        { "label": "man seated with a net and a basket of fish", "attributes": ["kneeling", "burden"], "expect": "Bearer" },
+        { "label": "woman carrying a water jar on her head", "attributes": ["burden"], "expect": "Bearer" },
+        { "label": "man carrying a sheaf of wheat", "attributes": ["burden"], "expect": "Bearer" },
+        { "label": "figure with a drum", "attributes": ["burden"], "expect": "Bearer" },
+        { "label": "man standing with his arms at his sides", "attributes": [], "expect": "Townsfolk" },
+        { "label": "woman standing in a doorway", "attributes": [], "expect": "Townsfolk" },
+        { "label": "child running", "attributes": [], "expect": "Townsfolk" },
+        { "label": "man pointing at the sky", "attributes": [], "expect": "Townsfolk" },
+        { "label": "sheep", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "sheep", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "sheep", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "sheep, lying down", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "goat", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "sheepdog", "attributes": ["quadruped"], "expect": "Herd Animal" },
+        { "label": "horse, riderless", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" }
+      ]
+    },
+    {
+      "name": "Minimal set, five pieces",
+      "figures": [
+        { "label": "swaddled infant", "attributes": ["swaddled"], "expect": "The Infant" },
+        { "label": "kneeling woman", "attributes": ["kneeling"], "expect": "Supplicant" },
+        { "label": "man with staff", "attributes": ["staff"], "expect": "Drover" },
+        { "label": "ox", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" },
+        { "label": "donkey", "attributes": ["quadruped", "large"], "expect": "Beast of Burden" }
+      ]
+    }
+  ]
+}

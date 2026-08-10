@@ -1,0 +1,14 @@
+{
+  "name": "nativity-skirmish",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A skirmish miniatures ruleset played with the figures of a nativity display",
+  "scripts": {
+    "index": "node scripts/build-index.mjs",
+    "lint": "node scripts/lint-docs.mjs",
+    "immutable": "node scripts/check-immutable.mjs",
+    "verify": "node scripts/conversion-verify.mjs",
+    "check": "npm run index && npm run lint && npm run immutable && npm run verify"
+  }
+}
