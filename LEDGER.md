@@ -25,6 +25,8 @@ open that corpus, so it skips qualified references (stele:ADR-0009).
 - [deferred] `drawWarband` proves a legal warband *exists*; scarcity-first makes it unrepresentative (the 31-model set draws no Bearers or Herd Animals). Fine for the feasibility claim, misleading if ever read as advice (ADR-0006)
 - [deferred] `artifacts/` is generated but committed for review, and nothing checks it against the corpus the way the hook checks `adr/INDEX.md` — it can drift silently (ADR-0006)
 - [feature] Playtest the ten profiles on a physical set; measured stat values go in a new ADR (ADR-0006)
+- [feature] Playtest whether six rounds is the right game length, and whether positional scoring actually beats melee attrition — neither is machine-checkable; measured result goes in a new ADR (ADR-0007)
+- [feature] Write scenario 01, "The Journey" — the last piece of v1 (ADR-0002)
 
 ## Resolved
 

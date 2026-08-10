@@ -16,6 +16,8 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { tableUnder, unbacktick } from './lib/rules-table.mjs';
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const TABLE = join(ROOT, 'rules/conversion-table.md');
 const FIXTURES = join(ROOT, 'fixtures/belen-inventories.json');
@@ -30,33 +32,6 @@ const MAX_HERALDS = 1;
 const HERALD = 'Herald';
 const INFANT = 'The Infant';
 const CATCH_ALL = '*';
-
-// --- markdown table reading -------------------------------------------------
-
-/** The rows of the first markdown table under a `## <heading>` — each row as trimmed
- *  cells. Alignment separators are dropped; the header row is not. */
-function tableUnder(markdown, heading) {
-  const lines = markdown.split('\n');
-  const start = lines.findIndex((l) => l.trim().startsWith(`## ${heading}`));
-  if (start === -1) throw new Error(`conversion table has no "## ${heading}" section`);
-
-  const rows = [];
-  for (const line of lines.slice(start + 1)) {
-    const text = line.trim();
-    if (text.startsWith('## ')) break;
-    if (!text.startsWith('|')) {
-      if (rows.length > 0) break;
-      continue;
-    }
-    const cells = text.slice(1, -1).split('|').map((c) => c.trim());
-    if (cells.every((c) => /^:?-{3,}:?$/.test(c))) continue;
-    rows.push(cells);
-  }
-  if (rows.length < 2) throw new Error(`"## ${heading}" holds no table`);
-  return rows.slice(1);
-}
-
-const unbacktick = (cell) => cell.replace(/`/g, '').trim();
 
 // --- the procedure ----------------------------------------------------------
 

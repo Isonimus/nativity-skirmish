@@ -8,7 +8,7 @@
     "index": "node scripts/build-index.mjs",
     "lint": "node scripts/lint-docs.mjs",
     "immutable": "node scripts/check-immutable.mjs",
-    "verify": "node scripts/conversion-verify.mjs",
+    "verify": "node scripts/conversion-verify.mjs && node scripts/core-loop-verify.mjs",
     "check": "npm run index && npm run lint && npm run immutable && npm run verify"
   }
 }
