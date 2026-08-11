@@ -43,8 +43,13 @@ const CASES = [
   },
   {
     what: 'Markdown leaking into the built page as literal text',
-    file: 'art/plates.json',
-    patch: (text) => text.replace('"The strip is the only tape measure', '"The **strip** is the only tape measure'),
+    // Perturbs the standfirst, not a plate caption. The captions only reach the page when
+    // the web derivatives are present, and those are LFS-adjacent: this case passed
+    // vacuously on a fresh clone, where no plate renders and no caption can leak. A
+    // negative case that depends on optional inputs proves nothing on the machine that
+    // most needs it.
+    file: 'package.json',
+    patch: (text) => text.replace('"description": "A skirmish', '"description": "A **skirmish**'),
     expect: /shows an emphasis marker as literal text/,
   },
   {
