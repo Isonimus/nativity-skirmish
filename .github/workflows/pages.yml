@@ -1,0 +1,57 @@
+# The corpus checks, and the manual they gate.
+#
+# The pre-commit hook has always named a CI backstop it did not have: every verify script's
+# error-check half has run on one machine only, which CLAUDE.md §3 requires not be the case.
+# This closes that (ADR-0011 §5). Deploy runs only if `npm run check` passed, so a red
+# corpus cannot publish.
+
+name: Checks and Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The plate masters are LFS pointers; art-verify reads their names, not their
+          # bytes, so they are left unfetched. The web derivatives are ordinary git content
+          # and are what the site serves.
+          lfs: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm run check
+      # The bounds that gate the build, proved able to fail. A green check whose checks
+      # cannot fail is the failure mode this repo has hit three times (CLAUDE.md §4).
+      - run: npm run negative
+      - run: npm run site
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          path: build
+
+  deploy:
+    needs: check
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

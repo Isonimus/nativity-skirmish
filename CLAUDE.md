@@ -132,15 +132,21 @@ actually wired (R11), so a row cannot claim a check that runs nowhere.
 | 1 | Profiles key on **silhouette and pose**, never on figure identity. No core rule may depend on the reader owning a specific figure. | ADR-0002 | review-only |
 | 2 | No absolute distance unit appears in rules text. Every distance is a multiple or half-multiple of one figure-height (`H`). | ADR-0003 | `verified_by: scenario-verify.mjs` |
 | 3 | No rule ends a scenario on a single model's loss or capture. Importance is expressed as per-round scoring pressure. | ADR-0005 | `verified_by: scenario-verify.mjs` |
-| 4 | No rules sentence is duplicated into presentation. The published manual is generated from `rules/*.md`; no committed file holds a second copy of a rule or a stat. | ADR-0008 | review-only |
+| 4 | No rules sentence is duplicated into presentation. The published manual is generated from `rules/*.md`; no committed file holds a second copy of a rule or a stat. | ADR-0008 | `verified_by: site-verify.mjs` (no committed HTML, and the play sheet is extracted; a rule retyped into a *non*-HTML file remains review-only) |
 | 5 | No plate keys on figure identity. Every illustration depicts an observable attribute or a rules situation, never a named figure as the exemplar of a class. | ADR-0008 | `verified_by: art-verify.mjs` |
 | 6 | No publisher's trade dress, trademark, product name or house style is reproduced, cited or used as a prompt reference anywhere in the manual, its metadata or its assets. | ADR-0008 | `verified_by: art-verify.mjs` (prompts only; the rendered images and the site's styling remain review-only) |
+| 7 | Rules Markdown stays inside the renderer's nine-construct subset. A section wanting a link, a nested list or an `###` extends the renderer and the ADR, never the output. | ADR-0011 | `verified_by: site-verify.mjs` |
 
 A bound that gates the build is **negative-tested before it is believed** — perturb the
-input, confirm the check fires. Two vacuous bounds have shipped in this repo's harness
-(`MAX_DECISIVE`, and a comeback bound that reduced to `floor(rounds/3) >= rounds/2`), both
-found by accident. A check that cannot fail is worse than no check, because it reports
-green.
+input, confirm the check fires. Three vacuous bounds have shipped in this repo's harness
+(`MAX_DECISIVE`; a comeback bound that reduced to `floor(rounds/3) >= rounds/2`; and a
+play-sheet check that read a whole section in which every class name appeared anyway), the
+first two found by accident. A check that cannot fail is worse than no check, because it
+reports green.
+
+Where the perturbations can be scripted, they are **committed and wired**, not done once in
+a scratch file — `scripts/site-negative.mjs`, run by `npm run negative` and in CI. A proof
+that cannot be re-run is how the next vacuous bound gets in.
 
 When an ADR's consequences create a rule that all *future* work must follow, add the row
 in the same commit as the ADR.

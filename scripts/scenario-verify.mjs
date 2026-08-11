@@ -71,8 +71,13 @@ if (rulesFiles.length === 0) throw new Error(`no rules files under ${RULES_DIR}`
  * are ordinary English. The spelled-out units are matched anywhere, minus `foot`/`feet`:
  * this check first fired on the phrase "foot-race", and a rule that cries wolf on the
  * prose gets deleted rather than obeyed.
+ *
+ * `in` has since gone the same way. Next to a number it is not enough of a signal either:
+ * the phrase that caught it was "it will still mean §3 in ten years". The residual hole is
+ * a rule written as "2 in" — accepted knowingly, because the manual's register spells
+ * units out and `inch`/`inches` are still matched anywhere, as is the `2"` mark.
  */
-const ABSOLUTE_UNIT = /\b\d+(?:½)?\s*(?:cm|mm|m|in|ft)\b|\b(?:centimetres?|centimeters?|millimetres?|millimeters?|inch|inches)\b/gi;
+const ABSOLUTE_UNIT = /\b\d+(?:½)?\s*(?:cm|mm|m|ft)\b|\b\d+(?:½)?\s*"|\b(?:centimetres?|centimeters?|millimetres?|millimeters?|inch|inches)\b/gi;
 
 /** Sudden loss. Standing invariant 3: importance is per-round scoring pressure, never a
  *  scenario-ending event. These are the phrasings that would express one. */

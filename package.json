@@ -1,15 +1,21 @@
 {
   "name": "nativity-skirmish",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "A skirmish miniatures ruleset played with the figures of a nativity display",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Isonimus/nativity-skirmish"
+  },
   "scripts": {
     "index": "node scripts/build-index.mjs",
     "lint": "node scripts/lint-docs.mjs",
     "immutable": "node scripts/check-immutable.mjs",
-    "verify": "node scripts/conversion-verify.mjs && node scripts/core-loop-verify.mjs && node scripts/scenario-verify.mjs && node scripts/art-verify.mjs",
+    "verify": "node scripts/conversion-verify.mjs && node scripts/core-loop-verify.mjs && node scripts/scenario-verify.mjs && node scripts/art-verify.mjs && node scripts/site-verify.mjs",
+    "negative": "node scripts/site-negative.mjs",
     "check": "npm run index && npm run lint && npm run immutable && npm run verify",
+    "site": "node scripts/build-site.mjs",
     "art:web": "node scripts/art-derive.mjs"
   }
 }

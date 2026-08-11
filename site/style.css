@@ -1,0 +1,317 @@
+/* The manual's visual identity (ADR-0011).
+ *
+ * Every colour in this file is a token defined once in :root. The dark palette redefines
+ * tokens only — no colour has its sole definition inside a media query, so a browser that
+ * reports no preference still gets a complete page.
+ *
+ * The palette is taken from the objects rather than invented: unglazed bisque, brush-black,
+ * fired clay, worn gold leaf, glaze blue. Dark is not an inversion; it is the same figures
+ * by candlelight, which is why the ground goes to fired umber rather than to black and the
+ * gild brightens rather than dimming.
+ */
+
+:root {
+  --ground: #f4ece0;
+  --ink: #2b2119;
+  --dim: #6b5d4f;
+  --terracotta: #a8442a;
+  --gild: #8a6520;
+  --glaze: #1e3a5c;
+  --edge: #ddd0bd;
+
+  --measure: 34em;
+  --body: "Alegreya", Georgia, "Times New Roman", serif;
+  --caps: "Alegreya SC", "Alegreya", Georgia, serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #191410;
+    --ink: #ede4d6;
+    --dim: #a2937f;
+    --terracotta: #c9573a;
+    --gild: #c99a3c;
+    --glaze: #7fa8d4;
+    --edge: #33291f;
+  }
+}
+
+/* Vendored rather than linked from a font CDN (ADR-0011 §3): a static rulebook that phones
+ * a third party on every page load is a tracking beacon our readers cannot switch off, and
+ * it would break offline and in print. */
+@font-face {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("fonts/alegreya-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Alegreya";
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("fonts/alegreya-latin-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Alegreya SC";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/alegreya-sc-400-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Alegreya SC";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/alegreya-sc-700-latin.woff2") format("woff2");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 6rem;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* One measure, not two columns. A printed rulebook sets two because a page is a fixed
+ * rectangle; a scrolling window is not, and two columns there make the reader scroll up to
+ * finish a sentence (ADR-0011 §4). */
+.masthead, nav, main, footer { max-width: var(--measure); margin: 0 auto; }
+
+/* --- masthead --------------------------------------------------------------- */
+
+.masthead { padding: 3rem 0 1rem; text-align: center; }
+
+.cover {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--edge);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-family: var(--caps);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 8vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0;
+  color: var(--terracotta);
+}
+
+.standfirst {
+  font-style: italic;
+  color: var(--dim);
+  margin: 0.5rem 0 0;
+}
+
+.banner {
+  margin: 2rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--gild);
+  border-left-width: 4px;
+  font-size: 0.95rem;
+  text-align: left;
+  color: var(--dim);
+}
+.banner strong { color: var(--ink); }
+
+/* --- contents --------------------------------------------------------------- */
+
+nav { margin: 3rem auto; }
+
+.contents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--edge);
+}
+
+.contents li { border-bottom: 1px solid var(--edge); }
+
+.contents a {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  font-family: var(--caps);
+  text-decoration: none;
+  color: var(--ink);
+}
+.contents a:hover { color: var(--terracotta); }
+
+.numeral {
+  font-family: var(--caps);
+  color: var(--gild);
+  font-weight: 700;
+}
+
+/* --- sections --------------------------------------------------------------- */
+
+section { margin: 4.5rem 0; scroll-margin-top: 1rem; }
+
+/* The section number is an address (ADR-0008 §2), so the design says so: set beside the
+ * heading and hung into the margin where there is room for it. */
+h2 {
+  font-family: var(--caps);
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--terracotta);
+}
+h2 .numeral { font-size: 2.4rem; margin-right: 0.4rem; }
+
+@media (min-width: 60rem) {
+  h2 .numeral { position: absolute; margin-left: -2.6rem; margin-right: 0; }
+  h2 { position: relative; }
+}
+
+h3 {
+  font-family: var(--caps);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--terracotta);
+  margin: 2.5rem 0 0.75rem;
+}
+
+p { margin: 0 0 1.1rem; }
+
+strong { font-weight: 800; }
+
+a { color: var(--glaze); text-underline-offset: 0.15em; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  padding: 0.05em 0.25em;
+  border: 1px solid var(--edge);
+  border-radius: 2px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--edge);
+  margin: 2.5rem 0;
+}
+
+blockquote {
+  margin: 0 0 1.75rem;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--terracotta);
+  font-style: italic;
+  color: var(--dim);
+}
+blockquote p { margin: 0; }
+
+ul, ol { margin: 0 0 1.1rem; padding-left: 1.4rem; }
+li { margin-bottom: 0.4rem; }
+
+/* --- tables ----------------------------------------------------------------- */
+
+/* No fill and no zebra striping. A statline is dense enough already (ADR-0011 §4). */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.75rem;
+  font-size: 0.94rem;
+}
+
+thead th {
+  font-family: var(--caps);
+  font-weight: 700;
+  color: var(--gild);
+  text-align: left;
+  border-bottom: 2px solid var(--edge);
+  padding: 0.4rem 0.6rem 0.4rem 0;
+}
+
+td {
+  border-bottom: 1px solid var(--edge);
+  padding: 0.45rem 0.6rem 0.45rem 0;
+  vertical-align: top;
+}
+
+caption {
+  font-family: var(--caps);
+  color: var(--dim);
+  text-align: left;
+  padding-bottom: 0.4rem;
+}
+
+/* Wide tables scroll inside themselves rather than pushing the page sideways. The profile
+ * table has six columns and one of them is a paragraph, so on a phone this is the
+ * difference between a readable page and a horizontally scrolling one. */
+table { display: block; overflow-x: auto; }
+
+/* --- plates ----------------------------------------------------------------- */
+
+figure.plate { margin: 2.5rem 0; }
+
+figure.plate img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--edge);
+}
+
+figcaption {
+  font-family: var(--caps);
+  font-size: 0.9rem;
+  color: var(--dim);
+  margin-top: 0.5rem;
+}
+
+/* --- the play sheet --------------------------------------------------------- */
+
+.steps {
+  font-family: var(--caps);
+  columns: 2;
+  gap: 2rem;
+}
+
+.decisions { list-style: none; padding: 0; }
+.decisions li { margin-bottom: 0.6rem; }
+.dim { color: var(--dim); font-size: 0.9rem; }
+
+/* --- footer ----------------------------------------------------------------- */
+
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--edge);
+  color: var(--dim);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* --- print ------------------------------------------------------------------ */
+
+/* Two columns exist here and nowhere else: the play sheet is the one page that is a fixed
+ * rectangle, which is the condition the convention was invented for (ADR-0011 §4). */
+@media print {
+  :root {
+    --ground: #fff;
+    --ink: #000;
+    --dim: #444;
+    --edge: #bbb;
+  }
+  body { font-size: 10.5pt; }
+  nav, .banner, .cover, footer { display: none; }
+  section { break-before: page; }
+  /* Attribute selector, not `#6-...`: a CSS id selector may not begin with a digit, and
+   * the manual's anchors do (ADR-0008 §2). */
+  [id="6-the-play-sheet"] { columns: 2; column-gap: 2rem; break-before: page; }
+  [id="6-the-play-sheet"] table, [id="6-the-play-sheet"] .steps { break-inside: avoid; }
+  .steps { columns: 1; }
+  figure.plate { break-inside: avoid; }
+}
