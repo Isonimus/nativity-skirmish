@@ -57,6 +57,11 @@ Machine-checkable half — non-zero exit if any holds:
 - a Skill or Resolve falls outside 2+..6+, which would make a roll auto-pass or auto-fail;
 - any exchange exceeds 75% (the roll is ceremony) or falls below 2% (the attacker is
   scenery);
+  <!-- Correction — 2026-08-10: this shipped stale. The bound is 90% measured against the
+       *advantage* roll, not 75% against the plain one; 75% on the plain roll is
+       unreachable with Skill bounded to 2+..6+ and so was a check that could never fire.
+       See scripts/core-loop-verify.mjs, MAX_DECISIVE, and slice 0009. -->
+
 - any matchup needs more than 50 exchanges to resolve, so it could never happen in a game;
 - a class has Grit below 1, or cannot move yet can strike, or has no Skill yet tests
   Resolve;

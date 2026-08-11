@@ -106,3 +106,23 @@ Points are scored at the end of each round, and only then.
 
 Nothing scores for removing models. Removing a model is a means — it clears a feature, it
 breaks a flock, it makes an opponent test Resolve — and never an end.
+
+## 6. The civilian behaviour table
+
+A Townsfolk that no player activated this round is not inert. At the end of the
+activation step, before scoring, roll a D6 for each one and resolve it in the order the
+active player chooses.
+
+| D6 | Behaviour |
+|---|---|
+| 1 | **Freeze.** It does nothing. |
+| 2 | **Flee.** It moves its full Move directly away from the nearest model. |
+| 3 | **Gawp.** It moves its full Move toward the Star. |
+| 4 | **Errand.** It moves its full Move toward the nearest terrain feature it is not already in. |
+| 5 | **Crowd.** It moves its full Move toward the nearest other Townsfolk. |
+| 6 | **Devotion.** It moves its full Move toward The Infant. |
+
+A civilian never Strikes and never Grabs. It blocks movement, it screens a line of
+advance, it can be Grabbed out of the way, and on a 3 or a 6 it walks into precisely the
+place both players wanted. Leaving a Townsfolk unactivated is a decision with a cost, not
+a way to have fewer models to think about.

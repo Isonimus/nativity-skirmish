@@ -130,8 +130,17 @@ actually wired (R11), so a row cannot claim a check that runs nowhere.
 | # | Invariant | Source | Enforced by |
 |---|---|---|---|
 | 1 | Profiles key on **silhouette and pose**, never on figure identity. No core rule may depend on the reader owning a specific figure. | ADR-0002 | review-only |
-| 2 | No absolute distance unit appears in rules text. Every distance is a multiple or half-multiple of one figure-height (`H`). | ADR-0003 | pending (LEDGER) |
-| 3 | No rule ends a scenario on a single model's loss or capture. Importance is expressed as per-round scoring pressure. | ADR-0005 | review-only |
+| 2 | No absolute distance unit appears in rules text. Every distance is a multiple or half-multiple of one figure-height (`H`). | ADR-0003 | `verified_by: scenario-verify.mjs` |
+| 3 | No rule ends a scenario on a single model's loss or capture. Importance is expressed as per-round scoring pressure. | ADR-0005 | `verified_by: scenario-verify.mjs` |
+| 4 | No rules sentence is duplicated into presentation. The published manual is generated from `rules/*.md`; no committed file holds a second copy of a rule or a stat. | ADR-0008 | review-only |
+| 5 | No plate keys on figure identity. Every illustration depicts an observable attribute or a rules situation, never a named figure as the exemplar of a class. | ADR-0008 | review-only |
+| 6 | No publisher's trade dress, trademark, product name or house style is reproduced, cited or used as a prompt reference anywhere in the manual, its metadata or its assets. | ADR-0008 | review-only |
+
+A bound that gates the build is **negative-tested before it is believed** — perturb the
+input, confirm the check fires. Two vacuous bounds have shipped in this repo's harness
+(`MAX_DECISIVE`, and a comeback bound that reduced to `floor(rounds/3) >= rounds/2`), both
+found by accident. A check that cannot fail is worse than no check, because it reports
+green.
 
 When an ADR's consequences create a rule that all *future* work must follow, add the row
 in the same commit as the ADR.

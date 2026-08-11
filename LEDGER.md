@@ -19,14 +19,17 @@ open that corpus, so it skips qualified references (stele:ADR-0009).
 <!-- One line per open item. Delete the line to close it; the git log is the done-record. -->
 
 - [feature] Decide the tone of the Herod/civilian-protection material before any of it is drafted — evacuation framing, threat offboard, no infant models — or drop it (ADR-0002)
-- [deferred] Lint rule: no absolute distance units ("/cm/mm) in rules text, once rules text exists (ADR-0003)
-- [deferred] Playtest the Star's movement rule for predictability; the measured result goes in a new ADR (ADR-0004)
+- [deferred] Playtest the Star's movement rule for predictability; Scenario 01 answers it structurally (the trailing player chooses the road) but the structural answer is itself untested (ADR-0004)
 - [deferred] Playtest the Infant's threat radius and per-round value; measured numbers go in a new ADR (ADR-0005)
 - [deferred] `drawWarband` proves a legal warband *exists*; scarcity-first makes it unrepresentative (the 31-model set draws no Bearers or Herd Animals). Fine for the feasibility claim, misleading if ever read as advice (ADR-0006)
 - [deferred] `artifacts/` is generated but committed for review, and nothing checks it against the corpus the way the hook checks `adr/INDEX.md` — it can drift silently (ADR-0006)
 - [feature] Playtest the ten profiles on a physical set; measured stat values go in a new ADR (ADR-0006)
 - [feature] Playtest whether six rounds is the right game length, and whether positional scoring actually beats melee attrition — neither is machine-checkable; measured result goes in a new ADR (ADR-0007)
-- [feature] Write scenario 01, "The Journey" — the last piece of v1 (ADR-0002)
+- [feature] Playtest Scenario 01: whether Gift delivery is a trap, a race or a real decision, and whether contested/held parity holds at a table; measured result goes in a new ADR (ADR-0008)
+- [feature] Build the published manual — generated site, play sheet extracted from the rules tables, design-notes appendix from the ADR corpus (ADR-0008)
+- [feature] Specify the plate corpus as structured data plus a prompt generator, and a rule that every profile has a plate and every plate a live profile (ADR-0008)
+- [feature] The manual's visual identity — palette, typefaces, page furniture — specified in its own terms, within the trade-dress boundary (ADR-0008)
+- [deferred] The version banner must be generated from a single source, not written into a template (ADR-0008)
 
 ## Resolved
 
