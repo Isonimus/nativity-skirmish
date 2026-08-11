@@ -1,0 +1,6 @@
+# Plate masters are ~8 MB PNGs and git history is permanent, so they are versioned through
+# LFS rather than committed inline (ADR-0008). The manual never serves these: the site
+# ships art/web/*.webp, which is ordinary git content at roughly 70 KB a plate.
+#
+# Requires `git lfs install` once per machine before the first commit that touches them.
+art/plates/*.png filter=lfs diff=lfs merge=lfs -text

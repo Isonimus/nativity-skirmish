@@ -8,7 +8,8 @@
     "index": "node scripts/build-index.mjs",
     "lint": "node scripts/lint-docs.mjs",
     "immutable": "node scripts/check-immutable.mjs",
-    "verify": "node scripts/conversion-verify.mjs && node scripts/core-loop-verify.mjs && node scripts/scenario-verify.mjs",
-    "check": "npm run index && npm run lint && npm run immutable && npm run verify"
+    "verify": "node scripts/conversion-verify.mjs && node scripts/core-loop-verify.mjs && node scripts/scenario-verify.mjs && node scripts/art-verify.mjs",
+    "check": "npm run index && npm run lint && npm run immutable && npm run verify",
+    "art:web": "node scripts/art-derive.mjs"
   }
 }

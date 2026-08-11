@@ -1,0 +1,234 @@
+{
+  "$comment": "The plate corpus for the published manual (ADR-0008). Checked and rendered to a prompt sheet by scripts/art-verify.mjs. Every plate depicts an observable attribute or a rules situation; none depicts a named figure as the exemplar of a class.",
+  "style": {
+    "medium": "hand-inked technical illustration with a flat wash, in the manner of a printed field guide",
+    "palette": "warm ochre, terracotta and sepia on unbleached paper; one cool grey for shadow; a single saturated gold reserved for the Star",
+    "light": "one soft source from the upper left, consistent across every plate",
+    "subject_matter": "painted ceramic and terracotta figurines standing on a table — the figurines are the subject and are rendered as objects, with visible glaze, chips, worn gilding and brush marks",
+    "background": "pale unbleached paper, empty except where a plate calls for terrain",
+    "framing": "eye level with the tabletop, so figures are seen as a player sees them"
+  },
+  "negative": [
+    "living people, or figures rendered as flesh rather than as painted ceramic",
+    "text, lettering, numerals, captions, logos, watermarks or signatures inside the image",
+    "faces rendered with portrait specificity; features are suggested by paint, as on a real figurine",
+    "named or recognisable religious figure presented as the exemplar of anything",
+    "violence of any kind, weapons in use, or figures depicted as struck, falling, injured or dead",
+    "infant figure depicted other than static and unattended in a manger",
+    "reference to any publisher, game, artist or product as a style source",
+    "heraldry, skull motifs, gothic ornament or border furniture from any existing game",
+    "photorealism, 3D renders, or digital painting gloss"
+  ],
+  "plates": [
+    {
+      "id": "p01-cover",
+      "section": 0,
+      "kind": "situation",
+      "teaches": "the premise",
+      "title": "The set, at eye level",
+      "subject": "a mixed household nativity set of perhaps fifteen figurines, plainly of different sizes, ages and paint qualities, standing scattered on a bare table",
+      "composition": "wide, low, slightly off-centre; the Star hangs above and to the right, the only saturated gold in the image; several figures face it, several do not",
+      "caption": "You have owned an army since childhood. It has simply been standing still."
+    },
+    {
+      "id": "p02-figure-height",
+      "section": 1,
+      "kind": "situation",
+      "teaches": "establishing H",
+      "title": "One figure-height",
+      "subject": "a single standing adult figurine beside a strip of card cut to exactly its height, the card marked at its midpoint with a pencil line",
+      "composition": "flat side-on elevation, the card laid vertically against the figure; a second copy of the card lies horizontally below, showing it in use as a measure",
+      "caption": "The strip is the only tape measure this game uses."
+    },
+    {
+      "id": "p03-mixed-scale",
+      "section": 1,
+      "kind": "situation",
+      "teaches": "H in a mixed-scale set",
+      "title": "When the set does not agree with itself",
+      "subject": "eight standing figurines in a row, five clearly one size and three clearly larger, the card strip held against one of the five",
+      "composition": "even row, side-on, the five matching figures grouped so their shared height reads instantly",
+      "caption": "The most numerous figure sets H, even when it is not the largest."
+    },
+    {
+      "id": "p04-attribute-mounted",
+      "section": 2,
+      "kind": "attribute",
+      "teaches": "mounted",
+      "title": "Astride is a silhouette, not a story",
+      "subject": "three unrelated figurines that are each astride an animal — one on a camel, one on a donkey, one on a horse — differing entirely in size, dress and paint quality",
+      "composition": "three-quarter view, evenly spaced, all at the same scale relative to the frame so the shared outline is the only thing they have in common",
+      "caption": "All of these are mounted. What they carry, and who they are, does not come into it."
+    },
+    {
+      "id": "p05-attribute-staff",
+      "section": 2,
+      "kind": "attribute",
+      "teaches": "staff",
+      "title": "A long stick with no blade",
+      "subject": "four figurines each holding a long straight or hooked pole — a crook, a plain staff, a walking pole, a shepherd's stick — two standing, one kneeling, one leaning",
+      "composition": "flat side-on, poles all rendered at the same angle so the eye reads the shared shape before the figures",
+      "caption": "The pole decides the class. The pose does not."
+    },
+    {
+      "id": "p06-attribute-burden",
+      "section": 2,
+      "kind": "attribute",
+      "teaches": "burden",
+      "title": "Anything carried is a load",
+      "subject": "five figurines carrying wildly different things — a water jar, a basket of bread, a sheaf, a small chest, a stringed instrument — no two alike in size or dress",
+      "composition": "a shallow arc, each load held at a different height, so the variety is obvious and the shared attribute still reads",
+      "caption": "A jar and a chest are the same attribute."
+    },
+    {
+      "id": "p07-class-infant",
+      "section": 2,
+      "kind": "class",
+      "teaches": "The Infant",
+      "title": "The Infant",
+      "subject": "a single small swaddled figurine lying in a straw manger, alone, no other figure present",
+      "composition": "close, centred, entirely static; the manger occupies the lower two thirds, empty pale paper above",
+      "caption": "It never moves, and nothing in this game can take it off the table."
+    },
+    {
+      "id": "p08-class-herald",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Herald",
+      "title": "All of these are Heralds",
+      "subject": "three winged figurines of visibly different make — one tall and slender, one squat and folk-carved, one with gilt flaking off the wing edges",
+      "composition": "three-quarter view, wings the dominant shape in all three silhouettes, feet at different heights to suggest they are not bound by the ground",
+      "caption": "Wings, and nothing else, make a Herald."
+    },
+    {
+      "id": "p09-class-beast-of-burden",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Beast of Burden",
+      "title": "All of these are Beasts of Burden",
+      "subject": "three four-legged animal figurines standing at least half a figure-height at the shoulder — an ox, a donkey, a camel — with a standing human figurine behind for scale",
+      "composition": "side-on elevation in a row, the human figure at the far right, a faint pencil line across all four at the shoulder height that decides the class",
+      "caption": "Shoulder height decides it, not species."
+    },
+    {
+      "id": "p10-class-herd-animal",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Herd Animal",
+      "title": "All of these are Herd Animals",
+      "subject": "five small four-legged figurines — sheep of three different makes, a goat, a dog — clustered close together",
+      "composition": "a tight huddle seen slightly from above, one animal facing outward from the group",
+      "caption": "Small and four-legged. They move together, whether or not you want them to."
+    },
+    {
+      "id": "p11-class-rider",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Rider",
+      "title": "All of these are Riders",
+      "subject": "three mounted figurines, one plainly armed with a spear across the saddle, two plainly not",
+      "composition": "three-quarter view in a shallow line, the armed one in the middle so the eye asks the question the caption answers",
+      "caption": "A mounted figure carrying a weapon is still a Rider. Speed outranks the spear."
+    },
+    {
+      "id": "p12-class-soldier",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Soldier",
+      "title": "All of these are Soldiers",
+      "subject": "three figurines carrying weapons or wearing armour — a helmet and shield, a spear held upright at rest, greaves and a sheathed sword — every one of them standing at ease and at rest",
+      "composition": "flat side-on, evenly spaced, weapons held vertically and still",
+      "caption": "Armour or a weapon, worn or carried. Not used."
+    },
+    {
+      "id": "p13-class-drover",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Drover",
+      "title": "All of these are Drovers",
+      "subject": "three figurines with staffs or crooks — one standing, one kneeling with the crook still in hand, one walking — with two small animal figurines nearby",
+      "composition": "loose triangle, the kneeling figure at the front so the caption's point lands",
+      "caption": "A kneeling figure with a crook is a Drover. The crook is a rule; the knees are a pose."
+    },
+    {
+      "id": "p14-class-supplicant",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Supplicant",
+      "title": "All of these are Supplicants",
+      "subject": "four figurines kneeling, seated on the ground or prostrate, hands empty and carrying nothing at all",
+      "composition": "seen slightly from above so the low posture reads clearly; a deliberate gap of empty paper where a carried object would be",
+      "caption": "Kneeling, and holding nothing. The empty hands are the test."
+    },
+    {
+      "id": "p15-class-bearer",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Bearer",
+      "title": "All of these are Bearers",
+      "subject": "four figurines carrying loads, two standing and two kneeling with the load still in their hands",
+      "composition": "a row alternating standing and kneeling, so the shared load is the constant and the pose is the variable",
+      "caption": "A kneeling figure offering something is a Bearer, not a Supplicant. What is held outranks how it stands."
+    },
+    {
+      "id": "p16-class-townsfolk",
+      "section": 2,
+      "kind": "class",
+      "teaches": "Townsfolk",
+      "title": "All of these are Townsfolk",
+      "subject": "six figurines with nothing in common — a fisherman, a woman at a washboard, a child, a baker, a man simply standing, a figure whose occupation is unguessable",
+      "composition": "scattered, facing different directions, none interacting, the composition deliberately without a focal point",
+      "caption": "Everything the procedure did not catch. Most sets are mostly this."
+    },
+    {
+      "id": "p17-the-star-illuminates",
+      "section": 4,
+      "kind": "situation",
+      "teaches": "the illuminated feature",
+      "title": "The light decides where the game is",
+      "subject": "a small terrain feature — a well — lit in saturated gold, with four figurines around it, and a second unlit feature to the side already going dark",
+      "composition": "the gold confined entirely to the well and the ground within a short radius; everything outside it in flat sepia",
+      "caption": "Standing where you score is standing where you are seen."
+    },
+    {
+      "id": "p18-terrain-costs",
+      "section": 4,
+      "kind": "situation",
+      "teaches": "terrain",
+      "title": "Open, Rough, Difficult",
+      "subject": "one strip of table crossing three grounds in sequence — bare plaza, then straw and moss, then a stream with a low wall — with one figurine standing in each",
+      "composition": "a long horizontal band read left to right, the three grounds separated by their texture alone, no dividing lines",
+      "caption": "The display you own is the terrain chart."
+    },
+    {
+      "id": "p19-shaken",
+      "section": 4,
+      "kind": "situation",
+      "teaches": "Shaken",
+      "title": "Shaken, and still on the table",
+      "subject": "one figurine turned away from the others with a small marker of coloured putty at its base, three other figurines nearby continuing about their business",
+      "composition": "the turned figure at the near right, the group receding to the left; nothing dramatic, nothing knocked over",
+      "caption": "Fear turns a figure around. It never takes one away."
+    },
+    {
+      "id": "p20-the-stars-road",
+      "section": 5,
+      "kind": "situation",
+      "teaches": "the Star's road",
+      "title": "The road, and who chooses it",
+      "subject": "six terrain features laid in a rough chain across a table with the stable at one end, the Star hovering over the third, small arrows of light suggesting the two features it could move to next",
+      "composition": "seen from high and at an angle, the whole chain legible at once; the gold used only for the Star and the two possible next positions",
+      "caption": "It advances every round. The player who is losing decides which way."
+    },
+    {
+      "id": "p21-delivering-a-gift",
+      "section": 5,
+      "kind": "situation",
+      "teaches": "delivering a Gift",
+      "title": "A delivered Gift is a fact",
+      "subject": "a figurine setting a small chest down on the straw of the stable floor beside a marker, with the manger visible at the edge of frame",
+      "composition": "close and low, the chest and the hands the centre of the frame, the figure's face out of shot",
+      "caption": "Set down, it cannot be taken back. Neither can the round you spent walking there."
+    }
+  ]
+}
