@@ -30,6 +30,7 @@ open that corpus, so it skips qualified references (stele:ADR-0009).
 - [bug] `p03-mixed-scale` and `p02-figure-height` render the card strip as a detached plank rather than held against a figure; they read as acceptable but not as a measurement (ADR-0008)
 - [bug] `p14-class-supplicant` reads as saffron-robed monks — no invariant broken, but off-register for a belén; re-roll on the next art pass (ADR-0008)
 - [deferred] `art-verify.mjs` checks a web derivative exists, not that it is current against its master; a stale derivative would ship silently (ADR-0008)
+- [bug] All 21 masters and their web derivatives exist only on the author's machine: `git lfs install` has not been run, and committing 168 MB of PNG inline is not undoable. `.gitattributes` routes them and the derivative checks are vacuous until they land (ADR-0008)
 - [feature] The manual's visual identity — palette, typefaces, page furniture — specified in its own terms, within the trade-dress boundary (ADR-0008)
 - [deferred] The version banner must be generated from a single source, not written into a template (ADR-0008)
 
