@@ -31,7 +31,7 @@ open that corpus, so it skips qualified references (stele:ADR-0009).
 - [deferred] `art-verify.mjs` checks a web derivative exists, not that it is current against its master; a stale derivative would ship silently (ADR-0008)
 - [deferred] Appendix A links to the ADR corpus rather than publishing it; ADR bodies use `###` and HTML entities, outside the manual's Markdown subset (ADR-0011)
 - [deferred] Nothing in the harness looks at the rendered page: the checks read the HTML, never the rendering, so a stylesheet that hid the body text would pass them all (ADR-0011)
-- [deferred] `.github/workflows/pages.yml` has never run — the repo has no remote, so CI remains a claim rather than a backstop (ADR-0011)
+- [feature] GitHub Pages must be set to deploy from GitHub Actions in the repo settings; until it is, `pages.yml` builds the manual and deploys nothing (ADR-0011)
 
 ## Resolved
 
