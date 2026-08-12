@@ -1,5 +1,7 @@
 # Nativity: Skirmish
 
+**Read the manual → https://isonimus.github.io/nativity-skirmish/**
+
 A skirmish miniatures ruleset played with the figures of a Christmas nativity display — a
 *belén* — written in the register of a serious wargame manual. There is nothing to buy and
 nothing to paint: the set your family keeps in a box is the terrain, the models and the
@@ -34,7 +36,9 @@ Zero dependencies; Node 22 and nothing else.
 
 The pre-commit hook runs the linter against the **commit**, not the working tree, so a fix
 you forgot to stage cannot green a red commit. `.github/workflows/pages.yml` runs the same
-checks in CI and publishes `build/` to GitHub Pages from `main`.
+checks in CI and publishes `build/` to
+[isonimus.github.io/nativity-skirmish](https://isonimus.github.io/nativity-skirmish/) from
+`main` — the deploy job only runs if the checks passed, so a red corpus cannot publish.
 
 ## Working on it
 
